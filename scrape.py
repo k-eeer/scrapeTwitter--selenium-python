@@ -6,7 +6,8 @@ def scrapeAndNewtab():
 	userName=input("請輸入用戶名\n")
 	driver=webdriver.Firefox()
 	driver.get(f"https://twitter.com/{userName}")
-
+	
+	
 	'''處理可能出現的失效頁面：'''
 	try:
 		driver.find_element(By.XPATH,"//a[@id='button_retry']")
@@ -16,7 +17,8 @@ def scrapeAndNewtab():
 
 	time.sleep(3)
 	driver.switch_to.window(driver.window_handles[-1])
-	'''需要規避彈出視窗，可使用下段code'''
+	
+	'''需要規避額外彈出視窗，可使用下段code'''
 	'''main_page = driver.current_window_handle
 	if driver.current_window_handle != main_page:
 		driver.switch_to.window(main_page)'''
@@ -24,7 +26,6 @@ def scrapeAndNewtab():
 	elementDate=driver.find_elements(By.XPATH,"//time[@datetime]")
 	elementUrl=driver.find_elements(By.XPATH,"//a[contains(@href,'status')and @role='link'and contains(@class,'r-qvutc0')]")
 	with open('twitter.log','a+')as file:
-
 		for i in range(3):
 			content=elementDate[i].get_attribute('datetime').split('T')[0]+'|'+elementUrl[i].get_attribute('href')
 			print(content)
