@@ -1,6 +1,7 @@
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 import time,webbrowser
+
 def scrapeAndNewtab():
 	'''搜尋特定用戶名時間軸最頂三則推文，並各自用瀏覽器新分頁開啟'''
 	userName=input("請輸入用戶名\n")
