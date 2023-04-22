@@ -19,6 +19,6 @@
 
 ![image](https://github.com/k-eeer/scrapeTwitter--selenium-python/blob/main/demo.png)
 
-使用者輸入用戶名後將自動打開時間軸上前三則推文，並將推文的時間跟url寫入tweeter.log
+使用者輸入用戶名後將自動打開時間軸上前三則推文，並將推文的時間跟url寫入twitter.log
 
 若使用echo 提前輸入選擇，可略過詢問訊息，等待瀏覽器自動打開分頁
